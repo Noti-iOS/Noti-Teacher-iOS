@@ -6,5 +6,6 @@ target 'Noti_Teacher' do
   use_frameworks!
 
   # Pods for Noti_Teacher
+  pod 'FSCalendar'
 
 end

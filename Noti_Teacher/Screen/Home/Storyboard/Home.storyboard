@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeoB.ttf">
+            <string>AppleSDGothicNeoB00</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--HomeVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -16,9 +21,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-b2-3Wf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="508"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-f7-bK4" customClass="FSCalendar">
+                                        <rect key="frame" x="17" y="169" width="380" height="325"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="325" id="Lck-vL-Ooh"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhT-Jx-a0U">
+                                        <rect key="frame" x="26" y="141" width="89" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="89" id="QvJ-0C-06W"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="24"/>
+                                        <color key="textColor" red="0.3921568627" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC9-Fd-OYq">
+                                        <rect key="frame" x="280" y="139" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="E1I-rA-9oQ"/>
+                                            <constraint firstAttribute="width" constant="24" id="kUP-Zc-cwQ"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.3921568627" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="chevron.left" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4t-zC-NsQ">
+                                        <rect key="frame" x="322" y="139" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="5rJ-Xp-Uo4"/>
+                                            <constraint firstAttribute="height" constant="24" id="qn6-b7-wwG"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.3921568627" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="chevron.right" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX7-6O-Chj">
+                                        <rect key="frame" x="364" y="139" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="p4L-da-jzx"/>
+                                            <constraint firstAttribute="height" constant="24" id="yV7-uT-Tze"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeoB00" family="AppleSDGothicNeoB00" pointSize="18"/>
+                                        <color key="tintColor" red="0.3921568627" green="0.46666666670000001" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="주"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KX5-f7-bK4" secondAttribute="bottom" constant="14" id="9Er-3R-tF2"/>
+                                    <constraint firstItem="cX7-6O-Chj" firstAttribute="leading" secondItem="C4t-zC-NsQ" secondAttribute="trailing" constant="18" id="9PE-yi-xOR"/>
+                                    <constraint firstItem="KX5-f7-bK4" firstAttribute="leading" secondItem="Gay-b2-3Wf" secondAttribute="leading" constant="17" id="JbQ-A9-lyp"/>
+                                    <constraint firstItem="UhT-Jx-a0U" firstAttribute="leading" secondItem="Gay-b2-3Wf" secondAttribute="leading" constant="26" id="Klg-In-mjR"/>
+                                    <constraint firstItem="KX5-f7-bK4" firstAttribute="top" secondItem="UhT-Jx-a0U" secondAttribute="bottom" constant="4" id="Mvq-gO-E2T"/>
+                                    <constraint firstItem="UhT-Jx-a0U" firstAttribute="top" secondItem="Gay-b2-3Wf" secondAttribute="top" constant="141" id="QnK-Hk-YVa"/>
+                                    <constraint firstAttribute="trailing" secondItem="cX7-6O-Chj" secondAttribute="trailing" constant="26" id="Qxh-oC-0wv"/>
+                                    <constraint firstAttribute="trailing" secondItem="KX5-f7-bK4" secondAttribute="trailing" constant="17" id="Z4H-9W-a0R"/>
+                                    <constraint firstItem="cX7-6O-Chj" firstAttribute="top" secondItem="Gay-b2-3Wf" secondAttribute="top" constant="139" id="bTP-JN-ajh"/>
+                                    <constraint firstItem="tC9-Fd-OYq" firstAttribute="top" secondItem="Gay-b2-3Wf" secondAttribute="top" constant="139" id="baJ-ig-f4b"/>
+                                    <constraint firstItem="C4t-zC-NsQ" firstAttribute="leading" secondItem="tC9-Fd-OYq" secondAttribute="trailing" constant="18" id="uBC-xk-G9k"/>
+                                    <constraint firstItem="C4t-zC-NsQ" firstAttribute="top" secondItem="Gay-b2-3Wf" secondAttribute="top" constant="139" id="zlq-PJ-eoI"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66p-G6-x9U" customClass="CustomNB" customModule="Noti_Teacher" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="89"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="sgY-wE-Yht"/>
                                 </constraints>
@@ -27,21 +98,27 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Gay-b2-3Wf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="0w5-sW-9hB"/>
+                            <constraint firstItem="Gay-b2-3Wf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CCh-yu-NRK"/>
+                            <constraint firstItem="Gay-b2-3Wf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IMi-0D-cJM"/>
                             <constraint firstItem="66p-G6-x9U" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XzH-zS-vjj"/>
                             <constraint firstItem="66p-G6-x9U" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ibZ-Aq-I3d"/>
                             <constraint firstItem="66p-G6-x9U" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yPV-L2-LEp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="Gay-b2-3Wf" id="D4L-FW-fjV"/>
                         <outlet property="customNaviBar" destination="66p-G6-x9U" id="CBx-LA-Va5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+            <point key="canvasLocation" x="158" y="45"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

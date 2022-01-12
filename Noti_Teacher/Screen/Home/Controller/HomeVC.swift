@@ -9,8 +9,11 @@ import UIKit
 
 class HomeVC: UIViewController {
     @IBOutlet weak var customNaviBar: CustomNB!
+    @IBOutlet weak var backgroundView: UIView!
+    
     override func viewDidLoad() {
         setNaviBar()
+        setCalendarBackground()
     }
 }
 //MARK: Custom Function
@@ -31,5 +34,12 @@ extension HomeVC {
     // menu Btn
     @objc func openSideMenu(_ sender: Any) {
         
+    }
+    
+    func setCalendarBackground() {
+        backgroundView.backgroundColor = .systemGray6
+        backgroundView.layer.cornerRadius = 40
+        backgroundView.layer.borderWidth = 1
+        backgroundView.layer.borderColor = UIColor.systemGray3.cgColor
     }
 }
