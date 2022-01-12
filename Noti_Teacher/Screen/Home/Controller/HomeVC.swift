@@ -37,6 +37,7 @@ class HomeVC: UIViewController {
         setNaviBar()
         setCalendarBackground()
         setCalendar()
+        setCalendarVerticalGesture()
     }
     
     //MARK: IBAction
@@ -67,6 +68,7 @@ class HomeVC: UIViewController {
 }
 //MARK: Custom Function
 extension HomeVC {
+    // navigationBar setting
     func setNaviBar() {
         customNaviBar.title = "TODAY'S HOMEWORK"
         
@@ -84,14 +86,29 @@ extension HomeVC {
     @objc func openSideMenu(_ sender: Any) {
         
     }
-    
+    // 상단 뷰 Setting
     func setCalendarBackground() {
         backgroundView.backgroundColor = .systemGray6
         backgroundView.layer.cornerRadius = 40
         backgroundView.layer.borderWidth = 1
         backgroundView.layer.borderColor = UIColor.systemGray3.cgColor
     }
-    
+    // calendarView vertical Gesture Setting
+    func setCalendarVerticalGesture() {
+        // panGesture - 캘린더 상하 스크롤
+        let calendarVerticalScrollGesture = UIPanGestureRecognizer(target: self, action: #selector(calendarViewVerticalScroll))
+        calendarView.addGestureRecognizer(calendarVerticalScrollGesture)
+    }
+    // calendarView vertical scroll
+    @objc func calendarViewVerticalScroll(sender: UIPanGestureRecognizer) {
+        let dragPosition = sender.translation(in: self.view)
+        //week
+        if dragPosition.y < 0 {
+            setCalendarToWeek()
+        } else {
+            setCalendarToMonth()
+        }
+    }
     // 캘린더 기본 Setting
     func setCalendar() {
         calendarView.delegate = self
