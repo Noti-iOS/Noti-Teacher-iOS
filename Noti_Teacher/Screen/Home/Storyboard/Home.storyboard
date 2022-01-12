@@ -16,17 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeL-zV-JjX">
-                                <rect key="frame" x="186" y="438" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66p-G6-x9U" customClass="CustomNB" customModule="Noti_Teacher" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="89"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="sgY-wE-Yht"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="66p-G6-x9U" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XzH-zS-vjj"/>
+                            <constraint firstItem="66p-G6-x9U" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ibZ-Aq-I3d"/>
+                            <constraint firstItem="66p-G6-x9U" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yPV-L2-LEp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customNaviBar" destination="66p-G6-x9U" id="CBx-LA-Va5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
