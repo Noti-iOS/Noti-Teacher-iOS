@@ -45,7 +45,8 @@ class HomeVC: UIViewController {
         setCalendarBackground()
         setCalendar()
         setCalendarVerticalGesture()
-        setUpSubjectCV()
+        setSubjectCV()
+        setNotification()
     }
     
     //MARK: IBAction
@@ -146,7 +147,7 @@ extension HomeVC {
     }
     
     // subjectCV Setting
-    func setUpSubjectCV() {
+    func setSubjectCV() {
         subjectCV.dataSource = self
         subjectCV.delegate = self
         
@@ -187,6 +188,39 @@ extension HomeVC {
         calendarView.setScope(.month, animated: true)
         weekMonthChangeBtn.setTitle("주", for: .normal)
         self.view.endEditing(true)
+    }
+    
+    // keyboard Notification Setting
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // 키보드 나올때
+    @objc func KeyBoardwillShow(_ notificatoin : Notification ){
+        let keyboardSize = (notificatoin.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let height = keyboardSize.height - view.safeAreaInsets.bottom
+        
+        var contentInset = subjectCV.contentInset
+        contentInset.bottom = height + 14
+        subjectCV.contentInset = contentInset
+    }
+    
+    // 키보드 사라질 때
+    @objc func KeyBoardwillHide(_ notificatoin : Notification ){
+        let contentInset = UIEdgeInsets.zero
+        subjectCV.contentInset = contentInset
+    }
+    
+    // 키보드 hide
+    @objc func hideKeyboard(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.view.endEditing(true)
+            for textView in self.view.subviews where textView is UITextView {
+                textView.resignFirstResponder()
+            }
+        }
+        sender.cancelsTouchesInView = false
     }
 }
 //MARK: FSCalendarDataSource
