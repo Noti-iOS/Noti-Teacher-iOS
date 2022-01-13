@@ -1,8 +1,8 @@
 //
 //  UITextField+.swift
-//  IOS_Study
+//  Noti_Teacher
 //
-//  Created by 황윤경 on 2021/12/27.
+//  Created by 황윤경 on 2022/01/12.
 //
 
 import UIKit

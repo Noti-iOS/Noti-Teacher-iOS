@@ -1,8 +1,8 @@
 //
 //  Notification+.swift
-//  IOS_Study
+//  Noti_Teacher
 //
-//  Created by ho jun lim on 2022/01/03.
+//  Created by 황윤경 on 2022/01/12.
 //
 
 import Foundation

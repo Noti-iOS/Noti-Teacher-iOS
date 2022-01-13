@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2309EA64278EF69A0023E063 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA63278EF69A0023E063 /* Subjects.swift */; };
+		2309EA77278EFBDD0023E063 /* MemoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA76278EFBDD0023E063 /* MemoCVC.swift */; };
+		2309EA79278EFC1C0023E063 /* SubjectListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA78278EFC1C0023E063 /* SubjectListCVC.swift */; };
+		2309EA7C278EFCBE0023E063 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA7B278EFCBE0023E063 /* UITextField+.swift */; };
+		2309EA7E278EFCCF0023E063 /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA7D278EFCCF0023E063 /* Notification+.swift */; };
+		2309EA80278EFCE10023E063 /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA7F278EFCE10023E063 /* UITextView+.swift */; };
+		2309EA82278EFD290023E063 /* HomeworkListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2309EA81278EFD290023E063 /* HomeworkListTVC.swift */; };
+		23934D4627906BD6007857D3 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23CF3A88278B1FD4007ECB76 /* AppleSDGothicNeoSB.ttf */; };
+		23934D4727906BD6007857D3 /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23CF3A8A278B1FD4007ECB76 /* AppleSDGothicNeoR.ttf */; };
+		23934D4827906BD6007857D3 /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23CF3A89278B1FD4007ECB76 /* AppleSDGothicNeoB.ttf */; };
+		23934D4927906BD6007857D3 /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23CF3A87278B1FD4007ECB76 /* AppleSDGothicNeoM.ttf */; };
 		23CF3A70278B1D8D007ECB76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CF3A6F278B1D8D007ECB76 /* AppDelegate.swift */; };
 		23CF3A79278B1D8E007ECB76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23CF3A78278B1D8E007ECB76 /* Assets.xcassets */; };
 		23CF3A7C278B1D8E007ECB76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23CF3A7A278B1D8E007ECB76 /* LaunchScreen.storyboard */; };
@@ -28,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2309EA63278EF69A0023E063 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		2309EA76278EFBDD0023E063 /* MemoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCVC.swift; sourceTree = "<group>"; };
+		2309EA78278EFC1C0023E063 /* SubjectListCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectListCVC.swift; sourceTree = "<group>"; };
+		2309EA7B278EFCBE0023E063 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		2309EA7D278EFCCF0023E063 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
+		2309EA7F278EFCE10023E063 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
+		2309EA81278EFD290023E063 /* HomeworkListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkListTVC.swift; sourceTree = "<group>"; };
 		23CF3A6C278B1D8D007ECB76 /* Noti_Teacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noti_Teacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23CF3A6F278B1D8D007ECB76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23CF3A78278B1D8E007ECB76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,9 +55,6 @@
 		23CF3A88278B1FD4007ECB76 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
 		23CF3A89278B1FD4007ECB76 /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		23CF3A8A278B1FD4007ECB76 /* AppleSDGothicNeoR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoR.ttf; sourceTree = "<group>"; };
-		23CF3A91278B2004007ECB76 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
-		23CF3A92278B2004007ECB76 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		23CF3A93278B2004007ECB76 /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		23CF3A97278B2060007ECB76 /* CustomNB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNB.xib; sourceTree = "<group>"; };
 		23CF3A98278B2060007ECB76 /* CustomNB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNB.swift; sourceTree = "<group>"; };
 		23CF3AA7278B2106007ECB76 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -71,6 +86,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2309EA73278EFBC30023E063 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2309EA75278EFBCF0023E063 /* CVC */,
+				2309EA74278EFBC80023E063 /* TVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2309EA74278EFBC80023E063 /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				2309EA81278EFD290023E063 /* HomeworkListTVC.swift */,
+			);
+			path = TVC;
+			sourceTree = "<group>";
+		};
+		2309EA75278EFBCF0023E063 /* CVC */ = {
+			isa = PBXGroup;
+			children = (
+				2309EA76278EFBDD0023E063 /* MemoCVC.swift */,
+				2309EA78278EFC1C0023E063 /* SubjectListCVC.swift */,
+			);
+			path = CVC;
+			sourceTree = "<group>";
+		};
+		2309EA7A278EFCA20023E063 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2309EA7B278EFCBE0023E063 /* UITextField+.swift */,
+				2309EA7D278EFCCF0023E063 /* Notification+.swift */,
+				2309EA7F278EFCE10023E063 /* UITextView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		23CF3A63278B1D8D007ECB76 = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				23CF3AB3278B217E007ECB76 /* Factory */,
-				23CF3A90278B2004007ECB76 /* Extension */,
+				2309EA7A278EFCA20023E063 /* Extension */,
 				23CF3A8B278B1FFD007ECB76 /* Struct */,
 				23CF3A86278B1FD4007ECB76 /* Font */,
 				23CF3A7A278B1D8E007ECB76 /* LaunchScreen.storyboard */,
@@ -148,18 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				23CF3AC1278B25D4007ECB76 /* Identifiers.swift */,
+				2309EA63278EF69A0023E063 /* Subjects.swift */,
 			);
 			path = Struct;
-			sourceTree = "<group>";
-		};
-		23CF3A90278B2004007ECB76 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				23CF3A91278B2004007ECB76 /* UITextView+.swift */,
-				23CF3A92278B2004007ECB76 /* UITextField+.swift */,
-				23CF3A93278B2004007ECB76 /* Notification+.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		23CF3A96278B2055007ECB76 /* NavigationBar */ = {
@@ -199,6 +241,7 @@
 		23CF3AA0278B2092007ECB76 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2309EA73278EFBC30023E063 /* Cell */,
 				23CF3AA6278B20F8007ECB76 /* Storyboard */,
 				23CF3AA5278B20F1007ECB76 /* Controller */,
 			);
@@ -358,13 +401,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23934D4627906BD6007857D3 /* AppleSDGothicNeoSB.ttf in Resources */,
 				23CF3AC8278B2673007ECB76 /* Students.storyboard in Resources */,
 				23CF3AC4278B2661007ECB76 /* Chatting.storyboard in Resources */,
 				23CF3AB8278B2403007ECB76 /* TabBar.storyboard in Resources */,
 				23CF3A7C278B1D8E007ECB76 /* LaunchScreen.storyboard in Resources */,
+				23934D4727906BD6007857D3 /* AppleSDGothicNeoR.ttf in Resources */,
+				23934D4827906BD6007857D3 /* AppleSDGothicNeoB.ttf in Resources */,
 				23CF3AA8278B2106007ECB76 /* Home.storyboard in Resources */,
 				23CF3A79278B1D8E007ECB76 /* Assets.xcassets in Resources */,
 				23CF3A99278B2060007ECB76 /* CustomNB.xib in Resources */,
+				23934D4927906BD6007857D3 /* AppleSDGothicNeoM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,12 +467,19 @@
 				23CF3ACA278B267D007ECB76 /* StudentsVC.swift in Sources */,
 				23CF3AAA278B2113007ECB76 /* HomeVC.swift in Sources */,
 				23CF3AC0278B25B8007ECB76 /* ViewControllerFactory.swift in Sources */,
+				2309EA64278EF69A0023E063 /* Subjects.swift in Sources */,
 				23CF3AC2278B25D4007ECB76 /* Identifiers.swift in Sources */,
+				2309EA80278EFCE10023E063 /* UITextView+.swift in Sources */,
 				23CF3A70278B1D8D007ECB76 /* AppDelegate.swift in Sources */,
 				23CF3ABC278B2569007ECB76 /* TypeOfViewController.swift in Sources */,
 				23CF3ABE278B2597007ECB76 /* StoryboardRepresentation.swift in Sources */,
+				2309EA7E278EFCCF0023E063 /* Notification+.swift in Sources */,
 				23CF3ABA278B24BB007ECB76 /* MainTBC.swift in Sources */,
+				2309EA82278EFD290023E063 /* HomeworkListTVC.swift in Sources */,
+				2309EA7C278EFCBE0023E063 /* UITextField+.swift in Sources */,
+				2309EA79278EFC1C0023E063 /* SubjectListCVC.swift in Sources */,
 				23CF3AC6278B266A007ECB76 /* ChattingVC.swift in Sources */,
+				2309EA77278EFBDD0023E063 /* MemoCVC.swift in Sources */,
 				23CF3A9A278B2060007ECB76 /* CustomNB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

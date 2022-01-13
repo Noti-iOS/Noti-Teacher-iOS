@@ -29,6 +29,10 @@ struct Identifiers {
     static let profileImageVC = "ProfileImageVC"
     
     //MARK: - Cell
+    static let subjectListCVC = "SubjectListCVC"
+    static let memoCVC = "MemoCVC"
+    static let homeworkListTVC = "HomeworkListTVC"
+    static let subjectTVC = "SubjectTVC"
     
     //MARK: - View
 }

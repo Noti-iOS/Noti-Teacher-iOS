@@ -9,6 +9,12 @@ import UIKit
 import FSCalendar
 
 class HomeVC: UIViewController {
+    // 임시 Subject 데이터
+    let subjects = [
+        Subjects("수학_중 2반", ["쎈 수학 p110~120", "곱셈공식 암기"]),
+        Subjects("수학_중 3반", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
+        Subjects("과학_중 2반", ["p51~60", "주기율표 암기"])
+    ]
     // 임시 숙제 있는 날 데이터
     let homeworkDay = ["20220101","20220112","20220121","20220125"]
     let homeworkDay_Done = ["20220112","20220124","20220117","20220127"]
@@ -19,6 +25,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
     @IBOutlet weak var currentDate: UILabel!
     @IBOutlet weak var weekMonthChangeBtn: UIButton!
+    @IBOutlet weak var subjectCV: UICollectionView!
     
     var currentPage: Date?
     private lazy var today: Date = { return Date() }()
@@ -38,6 +45,7 @@ class HomeVC: UIViewController {
         setCalendarBackground()
         setCalendar()
         setCalendarVerticalGesture()
+        setUpSubjectCV()
     }
     
     //MARK: IBAction
@@ -137,6 +145,16 @@ extension HomeVC {
         calendarView.appearance.todayColor = .systemGray3
     }
     
+    // subjectCV Setting
+    func setUpSubjectCV() {
+        subjectCV.dataSource = self
+        subjectCV.delegate = self
+        
+        subjectCV.alwaysBounceVertical = true
+        subjectCV.allowsSelection = false
+        subjectCV.showsVerticalScrollIndicator = false
+    }
+    
     // calendar가 month일 때 Next, Prev Month 이동
     func scrollCurrentPage(isPrev: Bool) {
         let cal = Calendar.current
@@ -221,5 +239,47 @@ extension HomeVC: FSCalendarDelegateAppearance {
             return [UIColor.systemGray2]
         }
         return nil
+    }
+}
+//MARK: UICollectionViewDataSource
+extension HomeVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // 과목 + memo
+        return subjects.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == subjects.count {
+            let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.memoCVC, for: indexPath) as! MemoCVC
+            
+            // 메모 textView Size
+            cell.widthAnchor.constraint(equalToConstant: subjectCV.frame.width).isActive = true
+            return cell
+        } else {
+            let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.subjectListCVC, for: indexPath) as! SubjectListCVC
+            
+            cell.subjectName.text = subjects[indexPath.row].subjectName
+            cell.homeworkContents = subjects[indexPath.row].homework
+            
+            // 숙제 목록 tableView Size
+            cell.homeworkListHeight.constant = CGFloat(cell.homeworkContents.count * 45)
+            cell.widthAnchor.constraint(equalToConstant: subjectCV.frame.width).isActive = true
+            
+            return cell
+        }
+    }
+}
+
+//MARK: UICollectionViewDelegate
+extension HomeVC: UICollectionViewDelegate {
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        // 맨위에서 스크롤하거나 세게 스크롤하면 월로 바뀜
+        // 그냥 아래로 스크롤하면 주로 바뀜
+        // 주인 상태에서 스크롤 가능
+        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+            setCalendarToWeek()
+        } else if scrollView.contentOffset.y < 0 || scrollView.panGestureRecognizer.translation(in: scrollView).y > 200 {
+            setCalendarToMonth()
+        }
     }
 }

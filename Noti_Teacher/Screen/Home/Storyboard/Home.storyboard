@@ -5,11 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AppleSDGothicNeoB.ttf">
             <string>AppleSDGothicNeoB00</string>
+        </array>
+        <array key="AppleSDGothicNeoR.ttf">
+            <string>AppleSDGothicNeoR00</string>
         </array>
     </customFonts>
     <scenes>
@@ -112,14 +116,157 @@
                                     <constraint firstAttribute="height" constant="89" id="sgY-wE-Yht"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PjA-Ol-QJ6">
+                                <rect key="frame" x="0.0" y="508" width="414" height="354"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HJI-TM-gdY">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubjectListCVC" id="sns-Yx-2d0" customClass="SubjectListCVC" customModule="Noti_Teacher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0yv-ze-N3t">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과목명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxj-Qf-af6">
+                                                    <rect key="frame" x="30" y="8" width="52" height="27"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeoB00" family="AppleSDGothicNeoB00" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQY-6t-jkP">
+                                                    <rect key="frame" x="368" y="11" width="19" height="22"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="ellipsis" catalog="system"/>
+                                                </button>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MXd-sY-H56">
+                                                    <rect key="frame" x="18" y="39" width="378" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="flo-kh-fRD"/>
+                                                    </constraints>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeworkListTVC" id="bMd-TP-zPa" customClass="HomeworkListTVC" customModule="Noti_Teacher" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="44.5" width="378" height="45"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMd-TP-zPa" id="Qci-OQ-Lkw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="45"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-gf-vlV">
+                                                                        <rect key="frame" x="20" y="11" width="38.5" height="21.5"/>
+                                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottomMargin" secondItem="gaE-gf-vlV" secondAttribute="bottom" constant="1.5" id="43J-XB-bSu"/>
+                                                                    <constraint firstItem="gaE-gf-vlV" firstAttribute="top" secondItem="Qci-OQ-Lkw" secondAttribute="topMargin" id="fVg-hv-lU2"/>
+                                                                    <constraint firstItem="gaE-gf-vlV" firstAttribute="leading" secondItem="Qci-OQ-Lkw" secondAttribute="leadingMargin" id="nr6-Qi-85s"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <connections>
+                                                                <outlet property="homeworkContents" destination="gaE-gf-vlV" id="adl-kr-fCF"/>
+                                                            </connections>
+                                                        </tableViewCell>
+                                                    </prototypes>
+                                                </tableView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUe-uE-cis">
+                                                    <rect key="frame" x="88" y="10.5" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="cUU-nJ-AM1"/>
+                                                        <constraint firstAttribute="height" constant="22" id="kKk-qX-baT"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button" image="AddHomework"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CUe-uE-cis" firstAttribute="centerY" secondItem="xxj-Qf-af6" secondAttribute="centerY" id="3aB-iL-wDb"/>
+                                                <constraint firstItem="MXd-sY-H56" firstAttribute="top" secondItem="xxj-Qf-af6" secondAttribute="bottom" constant="4" id="CYX-1Q-DG1"/>
+                                                <constraint firstItem="MXd-sY-H56" firstAttribute="leading" secondItem="0yv-ze-N3t" secondAttribute="leading" constant="18" id="LUx-2T-TU1"/>
+                                                <constraint firstAttribute="trailing" secondItem="MXd-sY-H56" secondAttribute="trailing" constant="18" id="Piw-Oc-gQn"/>
+                                                <constraint firstAttribute="trailing" secondItem="bQY-6t-jkP" secondAttribute="trailing" constant="27" id="Plo-Ld-GvB"/>
+                                                <constraint firstItem="bQY-6t-jkP" firstAttribute="top" secondItem="0yv-ze-N3t" secondAttribute="top" constant="11" id="icy-zx-EY6"/>
+                                                <constraint firstAttribute="bottom" secondItem="MXd-sY-H56" secondAttribute="bottom" constant="8" id="nH4-sm-qeL"/>
+                                                <constraint firstItem="xxj-Qf-af6" firstAttribute="top" secondItem="0yv-ze-N3t" secondAttribute="top" constant="8" id="ubO-he-zRB"/>
+                                                <constraint firstItem="CUe-uE-cis" firstAttribute="leading" secondItem="xxj-Qf-af6" secondAttribute="trailing" constant="6" id="y73-ma-afL"/>
+                                                <constraint firstItem="xxj-Qf-af6" firstAttribute="leading" secondItem="0yv-ze-N3t" secondAttribute="leading" constant="30" id="y7j-t9-xJE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="175"/>
+                                        <connections>
+                                            <outlet property="homeworkListHeight" destination="flo-kh-fRD" id="oBt-KD-YuC"/>
+                                            <outlet property="homeworkListTV" destination="MXd-sY-H56" id="Akn-Ro-CTX"/>
+                                            <outlet property="subjectName" destination="xxj-Qf-af6" id="hfn-Gn-3lK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MemoCVC" id="Dh6-4c-vFn" customClass="MemoCVC" customModule="Noti_Teacher" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="185" width="414" height="175"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bgb-8h-CuO">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3T-IG-ToK">
+                                                    <rect key="frame" x="30" y="8" width="35" height="26.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeoB00" family="AppleSDGothicNeoB00" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-hf-N8N">
+                                                    <rect key="frame" x="368" y="11" width="19" height="22"/>
+                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="ellipsis" catalog="system"/>
+                                                </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rFO-1u-50w">
+                                                    <rect key="frame" x="18" y="42.5" width="378" height="118.5"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="rFO-1u-50w" secondAttribute="bottom" constant="14" id="0CG-nb-C6Z"/>
+                                                <constraint firstItem="rFO-1u-50w" firstAttribute="top" secondItem="Q3T-IG-ToK" secondAttribute="bottom" constant="8" symbolic="YES" id="9Yf-04-4nX"/>
+                                                <constraint firstItem="11Q-hf-N8N" firstAttribute="top" secondItem="bgb-8h-CuO" secondAttribute="top" constant="11" id="Gr5-De-6Pc"/>
+                                                <constraint firstItem="Q3T-IG-ToK" firstAttribute="top" secondItem="bgb-8h-CuO" secondAttribute="top" constant="8" id="IrP-Gf-qkC"/>
+                                                <constraint firstAttribute="trailing" secondItem="11Q-hf-N8N" secondAttribute="trailing" constant="27" id="TAO-ln-8hW"/>
+                                                <constraint firstItem="Q3T-IG-ToK" firstAttribute="leading" secondItem="bgb-8h-CuO" secondAttribute="leading" constant="30" id="csm-1m-7zX"/>
+                                                <constraint firstItem="rFO-1u-50w" firstAttribute="leading" secondItem="bgb-8h-CuO" secondAttribute="leading" constant="18" id="p2q-gM-g20"/>
+                                                <constraint firstAttribute="trailing" secondItem="rFO-1u-50w" secondAttribute="trailing" constant="18" id="qNf-ex-MZf"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="175"/>
+                                        <connections>
+                                            <outlet property="memoTV" destination="rFO-1u-50w" id="M6G-5H-mDA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gay-b2-3Wf" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="0w5-sW-9hB"/>
+                            <constraint firstItem="PjA-Ol-QJ6" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="4o9-Cr-Off"/>
+                            <constraint firstItem="PjA-Ol-QJ6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4r9-gb-4qy"/>
                             <constraint firstItem="Gay-b2-3Wf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CCh-yu-NRK"/>
                             <constraint firstItem="Gay-b2-3Wf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IMi-0D-cJM"/>
+                            <constraint firstItem="PjA-Ol-QJ6" firstAttribute="top" secondItem="Gay-b2-3Wf" secondAttribute="bottom" id="Ikc-FF-fVx"/>
                             <constraint firstItem="66p-G6-x9U" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XzH-zS-vjj"/>
+                            <constraint firstItem="PjA-Ol-QJ6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="csG-2o-wg2"/>
                             <constraint firstItem="66p-G6-x9U" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ibZ-Aq-I3d"/>
                             <constraint firstItem="66p-G6-x9U" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yPV-L2-LEp"/>
                         </constraints>
@@ -130,18 +277,24 @@
                         <outlet property="calendarView" destination="KX5-f7-bK4" id="1HM-nB-wBW"/>
                         <outlet property="currentDate" destination="UhT-Jx-a0U" id="OdE-L5-N7g"/>
                         <outlet property="customNaviBar" destination="66p-G6-x9U" id="CBx-LA-Va5"/>
+                        <outlet property="subjectCV" destination="PjA-Ol-QJ6" id="dph-UT-UDt"/>
                         <outlet property="weekMonthChangeBtn" destination="cX7-6O-Chj" id="nG5-Um-YI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="157.97101449275362" y="44.866071428571423"/>
+            <point key="canvasLocation" x="155.07246376811597" y="44.866071428571423"/>
         </scene>
     </scenes>
     <resources>
+        <image name="AddHomework" width="24" height="24"/>
         <image name="Bar" width="41" height="5"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
