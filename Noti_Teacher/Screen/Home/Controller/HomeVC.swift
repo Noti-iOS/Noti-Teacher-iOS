@@ -47,6 +47,7 @@ class HomeVC: UIViewController {
         setCalendarVerticalGesture()
         setSubjectCV()
         setNotification()
+        setViewTabGesture()
     }
     
     //MARK: IBAction
@@ -108,6 +109,13 @@ extension HomeVC {
         let calendarVerticalScrollGesture = UIPanGestureRecognizer(target: self, action: #selector(calendarViewVerticalScroll))
         calendarView.addGestureRecognizer(calendarVerticalScrollGesture)
     }
+    
+    func setViewTabGesture() {
+        // tabGesture - 화면 탭하면 키보드 dismiss
+        let dismissKeyboardTabGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:)))
+        view.addGestureRecognizer(dismissKeyboardTabGesture)
+    }
+    
     // calendarView vertical scroll
     @objc func calendarViewVerticalScroll(sender: UIPanGestureRecognizer) {
         let dragPosition = sender.translation(in: self.view)
