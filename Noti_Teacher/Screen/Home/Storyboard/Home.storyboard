@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -139,12 +140,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQY-6t-jkP">
-                                                    <rect key="frame" x="368" y="11" width="19" height="22"/>
-                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="ellipsis" catalog="system"/>
-                                                </button>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MXd-sY-H56">
                                                     <rect key="frame" x="18" y="39" width="378" height="128"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,28 +148,43 @@
                                                     </constraints>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeworkListTVC" id="bMd-TP-zPa" customClass="HomeworkListTVC" customModule="Noti_Teacher" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="44.5" width="378" height="45"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="378" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bMd-TP-zPa" id="Qci-OQ-Lkw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="378" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaE-gf-vlV">
-                                                                        <rect key="frame" x="20" y="11" width="38.5" height="21.5"/>
+                                                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-dC-0Ew">
+                                                                        <rect key="frame" x="339" y="10" width="24" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="Ekf-ZN-yYM"/>
+                                                                            <constraint firstAttribute="width" constant="24" id="K9q-OH-htu"/>
+                                                                        </constraints>
+                                                                        <menu key="menu" id="Yps-V1-9N4">
+                                                                            <children>
+                                                                                <command title="Item 1" id="KQI-Ta-2KD"/>
+                                                                                <command title="Item 2" id="QGu-x4-H7H"/>
+                                                                            </children>
+                                                                        </menu>
+                                                                        <state key="normal" image="MoreBtn"/>
+                                                                    </button>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="homework" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S28-m8-8B1">
+                                                                        <rect key="frame" x="20" y="10.5" width="76" height="22.5"/>
                                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="17"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="bottomMargin" secondItem="gaE-gf-vlV" secondAttribute="bottom" constant="1.5" id="43J-XB-bSu"/>
-                                                                    <constraint firstItem="gaE-gf-vlV" firstAttribute="top" secondItem="Qci-OQ-Lkw" secondAttribute="topMargin" id="fVg-hv-lU2"/>
-                                                                    <constraint firstItem="gaE-gf-vlV" firstAttribute="leading" secondItem="Qci-OQ-Lkw" secondAttribute="leadingMargin" id="nr6-Qi-85s"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Cmt-dC-0Ew" secondAttribute="trailing" constant="15" id="1jM-UC-yUQ"/>
+                                                                    <constraint firstItem="S28-m8-8B1" firstAttribute="leading" secondItem="Qci-OQ-Lkw" secondAttribute="leading" symbolic="YES" id="O8u-pn-rBO"/>
+                                                                    <constraint firstItem="Cmt-dC-0Ew" firstAttribute="centerY" secondItem="Qci-OQ-Lkw" secondAttribute="centerY" id="TzU-mQ-Uzf"/>
+                                                                    <constraint firstItem="S28-m8-8B1" firstAttribute="centerY" secondItem="Qci-OQ-Lkw" secondAttribute="centerY" id="qBL-kg-Psn"/>
                                                                 </constraints>
                                                             </tableViewCellContentView>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <connections>
-                                                                <outlet property="homeworkContents" destination="gaE-gf-vlV" id="adl-kr-fCF"/>
+                                                                <outlet property="homeworkContents" destination="S28-m8-8B1" id="QSI-CX-Rwg"/>
+                                                                <outlet property="homeworkEditBtn" destination="Cmt-dC-0Ew" id="uLM-lp-DWL"/>
                                                             </connections>
                                                         </tableViewCell>
                                                     </prototypes>
@@ -194,8 +204,6 @@
                                                 <constraint firstItem="MXd-sY-H56" firstAttribute="top" secondItem="xxj-Qf-af6" secondAttribute="bottom" constant="4" id="CYX-1Q-DG1"/>
                                                 <constraint firstItem="MXd-sY-H56" firstAttribute="leading" secondItem="0yv-ze-N3t" secondAttribute="leading" constant="18" id="LUx-2T-TU1"/>
                                                 <constraint firstAttribute="trailing" secondItem="MXd-sY-H56" secondAttribute="trailing" constant="18" id="Piw-Oc-gQn"/>
-                                                <constraint firstAttribute="trailing" secondItem="bQY-6t-jkP" secondAttribute="trailing" constant="27" id="Plo-Ld-GvB"/>
-                                                <constraint firstItem="bQY-6t-jkP" firstAttribute="top" secondItem="0yv-ze-N3t" secondAttribute="top" constant="11" id="icy-zx-EY6"/>
                                                 <constraint firstAttribute="bottom" secondItem="MXd-sY-H56" secondAttribute="bottom" constant="8" id="nH4-sm-qeL"/>
                                                 <constraint firstItem="xxj-Qf-af6" firstAttribute="top" secondItem="0yv-ze-N3t" secondAttribute="top" constant="8" id="ubO-he-zRB"/>
                                                 <constraint firstItem="CUe-uE-cis" firstAttribute="leading" secondItem="xxj-Qf-af6" secondAttribute="trailing" constant="6" id="y73-ma-afL"/>
@@ -223,10 +231,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-hf-N8N">
-                                                    <rect key="frame" x="368" y="11" width="19" height="22"/>
+                                                    <rect key="frame" x="363" y="11" width="24" height="24"/>
                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="ellipsis" catalog="system"/>
+                                                    <state key="normal" image="MoreBtn"/>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rFO-1u-50w">
                                                     <rect key="frame" x="18" y="42.5" width="378" height="118.5"/>
@@ -289,9 +297,9 @@
     <resources>
         <image name="AddHomework" width="24" height="24"/>
         <image name="Bar" width="41" height="5"/>
+        <image name="MoreBtn" width="24" height="24"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

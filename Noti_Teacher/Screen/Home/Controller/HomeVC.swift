@@ -185,14 +185,14 @@ extension HomeVC {
     }
     
     // calendar을 week로 바꾸는 함수
-    func setCalendarToWeek() {
+    @objc func setCalendarToWeek() {
         calendarView.setScope(.week, animated: true)
         weekMonthChangeBtn.setTitle("월", for: .normal)
         self.view.endEditing(true)
     }
     
     // calendar을 month로 바꾸는 함수
-    func setCalendarToMonth() {
+    @objc func setCalendarToMonth() {
         calendarView.setScope(.month, animated: true)
         weekMonthChangeBtn.setTitle("주", for: .normal)
         self.view.endEditing(true)
@@ -202,6 +202,8 @@ extension HomeVC {
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setCalendarToWeek), name: .whenHomeworkEdit, object: nil)
     }
     
     // 키보드 나올때
