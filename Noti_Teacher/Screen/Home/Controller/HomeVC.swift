@@ -10,10 +10,10 @@ import FSCalendar
 
 class HomeVC: UIViewController {
     // 임시 Subject 데이터
-    let subjects = [
-        Subjects("수학_중 2반", ["쎈 수학 p110~120", "곱셈공식 암기"]),
-        Subjects("수학_중 3반", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
-        Subjects("과학_중 2반", ["p51~60", "주기율표 암기"])
+    public static var subjects = [
+        Subjects("수학_중 2반", ["중2 수학1", "중2 수학2"]),
+        Subjects("수학_중 3반", ["중3 수학1", "중3 수학2", "중3 수학3"]),
+        Subjects("과학_중 2반", ["중2 과학1", "중2 과학2"])
     ]
     // 임시 숙제 있는 날 데이터
     let homeworkDay = ["20220101","20220112","20220121","20220125"]
@@ -204,6 +204,7 @@ extension HomeVC {
         NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(setCalendarToWeek), name: .whenHomeworkEdit, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteHomework), name: .whenHomeworkDeleted, object: nil)
     }
     
     // 키보드 나올때
@@ -231,6 +232,10 @@ extension HomeVC {
             }
         }
         sender.cancelsTouchesInView = false
+    }
+    
+    @objc func deleteHomework() {
+        subjectCV.reloadData()
     }
 }
 //MARK: FSCalendarDataSource
@@ -289,11 +294,11 @@ extension HomeVC: FSCalendarDelegateAppearance {
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // 과목 + memo
-        return subjects.count + 1
+        return HomeVC.subjects.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == subjects.count {
+        if indexPath.row == HomeVC.subjects.count {
             let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.memoCVC, for: indexPath) as! MemoCVC
             
             // 메모 textView Size
@@ -302,8 +307,8 @@ extension HomeVC: UICollectionViewDataSource {
         } else {
             let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.subjectListCVC, for: indexPath) as! SubjectListCVC
             
-            cell.subjectName.text = subjects[indexPath.row].subjectName
-            cell.homeworkContents = subjects[indexPath.row].homework
+            cell.subjectName.text = HomeVC.subjects[indexPath.row].subjectName
+            cell.homeworkContents = HomeVC.subjects[indexPath.row].homework
             
             // 숙제 목록 tableView Size
             cell.homeworkListHeight.constant = CGFloat(cell.homeworkContents.count * 45)

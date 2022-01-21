@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name {
     static let authStateDidChange = NSNotification.Name("authStateDidChange")
     static let whenHomeworkEdit = Notification.Name("whenHomeworkEdit")
+    static let whenHomeworkDeleted = Notification.Name("whenHomeworkDeleted")
 }

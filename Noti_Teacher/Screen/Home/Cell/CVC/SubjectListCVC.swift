@@ -49,5 +49,7 @@ extension SubjectListCVC: UITableViewDataSource {
 
 //MARK: UITableViewDelegate
 extension SubjectListCVC: UITableViewDelegate {
-
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath)
+//    }
 }

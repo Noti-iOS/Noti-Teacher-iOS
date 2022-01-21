@@ -46,6 +46,8 @@ extension HomeworkListTVC {
             homeworkContents.becomeFirstResponder()
         } else {
             print("삭제")
+            NotificationCenter.default.post(name: .whenHomeworkDeleted, object: nil)
+//            indexpath
         }
     }
 }
